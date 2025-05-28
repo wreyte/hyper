@@ -25,6 +25,6 @@ import `github.com/wreyte/hyper/event`
 
 	fmt.Println("\n Unsubscribe Usage Example")
 	event.Unsubscribe(createUser)
-	time.Sleep(100 * time.Milliseconds
+	time.Sleep(100 * time.Millisecond)
 
 ```
