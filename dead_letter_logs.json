@@ -1,0 +1,2 @@
+{"time":"2025-05-28T01:13:33.75568778+01:00","level":"ERROR","msg":"No subscribers for topic","topic":"non_existent_topic","event_message":"Some message"}
+{"time":"2025-05-28T01:13:33.85631641+01:00","level":"ERROR","msg":"Event handler panicked","topic":"panic_topic","error":"panic in event handler for topic panic_topic: Oops! Something went wrong in the handler!","event_message":"Faulty data"}

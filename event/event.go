@@ -41,9 +41,7 @@ func Unsubscribe(sub Subscription) {
 }
 
 func Stop() {
-	if stream != nil {
-		stream.stop()
-	}
+	stream.stop()
 
 	if deadLetterFileHandle != nil {
 		err := deadLetterFileHandle.Close()
