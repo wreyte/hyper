@@ -9,8 +9,6 @@ func (e *eventStream) emit(topic string, v any, priority Priority) {
 
 	select {
 	case <-e.quitch:
-		slog.Warn("Attempted to emit event after stream stop signal",
-			"topic", topic)
 		return
 	default:
 		var targetChan chan event

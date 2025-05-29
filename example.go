@@ -24,7 +24,7 @@ func main() {
 	time.Sleep(100 * time.Millisecond)
 
 	fmt.Println("\n Non deterministic but should mostly return HighPriority first")
-	mixedPriority := event.Subscribe("mixed_priority", func(_ context.Context, msg any) {
+	mixedPriorities := event.Subscribe("mixed_priority", func(_ context.Context, msg any) {
 		slog.Info(fmt.Sprintf("Mixed Priority Handler received: %v", msg))
 	})
 
@@ -34,7 +34,7 @@ func main() {
 	event.Produce("mixed_priority", "Another High Priority Message", event.HighPriority)
 	time.Sleep(100 * time.Millisecond)
 
-	event.Unsubscribe(mixedPriority)
+	event.Unsubscribe(mixedPriorities)
 
 	fmt.Println("\n No Subscriber for this handler")
 	fmt.Println("Should receive an error log in the json file")
